@@ -1,14 +1,7 @@
-# USE DOCKER IMAGE AS BASE IMAGE
+
 FROM node:alpine
-
-#MAKE A WORKING DIRECTORY IN CONTAINER
 WORKDIR '/app'
-
-# DOWNLOAD AND INSTALL A DEPENDENCY
-
 COPY package.json .
 RUN npm install
 COPY .  .
-
-# TELL IMAGE WHAT TO DO AS CONTAINER
 CMD ["npm", "run", "start"]
